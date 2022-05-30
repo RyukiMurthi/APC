@@ -44,3 +44,6 @@ for item in range (0, 6):
     # check if shape is valid
     shape_choice = string_check ("What shape?: ", valid_shapes, "Please enter a valid shape")
 
+    if shape_choice != valid_shapes and shape_choice != "":
+        print ("You have chosen {}".format (shape_choice))
+

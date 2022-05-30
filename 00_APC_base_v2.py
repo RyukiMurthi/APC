@@ -25,6 +25,24 @@ def string_check (question, options, error):
             print (error)
             return ""
 
+def num_check (question):
+    error = "Please enter a number more than 0"
+    
+    valid = False
+    while not valid:
+        
+        #ask user for number and check if it is valid
+        try:
+            response = float(input (question))
+
+            if response <= 0:
+                print (error)
+            else:
+                return response
+
+        except ValueError:
+            print (error)
+
 
 # *** main routine ***
 
@@ -44,3 +62,7 @@ for item in range (0, 6):
     # check if shape is valid
     shape_choice = string_check ("What shape?: ", valid_shapes, "Please enter a valid shape")
 
+    if shape_choice != valid_shapes and shape_choice != "":
+        print ("You have chosen {}".format (shape_choice))
+
+        number_choice = num_check("Size of your dimension: ")
