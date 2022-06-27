@@ -43,6 +43,21 @@ def num_check (question):
         except ValueError:
             print (error)
 
+def area_perimeter (question):
+    
+    valid = False
+    while not valid:
+
+        # ask for dimension type and put response in lowercase
+        response = input (question).lower()
+
+        if response == "a" or response == "area":
+            return "area"
+        elif response == "p" or response == "perimeter":
+            return "perimeter"
+        
+        else:
+            print ("Please enter either area / perimeter...\n")
 
 # *** main routine ***
 
@@ -61,8 +76,13 @@ valid_shapes = [
 for item in range (0, 6):
     # check if shape is valid
     shape_choice = string_check ("What shape?: ", valid_shapes, "Please enter a valid shape")
+    
     # return chosen shape
     if shape_choice != valid_shapes and shape_choice != "":
         print ("You have chosen {}".format (shape_choice))
-        # ask for dimensions
-        number_choice = num_check("Size of your dimension: ")
+
+    # ask for dimension type
+    ap_choice = area_perimeter ("Area / Perimeter?: ")
+
+    # return chosen dimension
+    print ("You have chosen {}".format (ap_choice))
