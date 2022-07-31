@@ -154,6 +154,14 @@ valid_dimensions = [
     ["perimeter", "p"]
     ]
 
+# intialise list
+shape_choice = []
+dimension_value = []
+area_list = []
+peri_list = []
+
+
+
 shape_choice = ""
 while shape_choice != "xxx":
 
@@ -176,11 +184,14 @@ while shape_choice != "xxx":
         
 
 
-    # *** GET DIMENSIONS ***
+    # *** GET VALUES AND RESULTS ***
 
     # *** get circle ***
     if shape_choice == "circle":
         circle_value = float (num_check ("Radius: "))
+
+        # dimension value
+        dimension_value = circle_value
 
         # return circle value
         print ("Your radius is {}".format (circle_value))
@@ -192,6 +203,9 @@ while shape_choice != "xxx":
     if shape_choice == "square":
         square_value = float (num_check ("Length: "))
 
+        # dimension value
+        dimension_value = square_value
+
         # return square value
         print ("Your length is {}".format (square_value))
 
@@ -202,6 +216,10 @@ while shape_choice != "xxx":
     if shape_choice == "rectangle":
         rect_l = float (num_check ("Length: "))
         rect_w = float (num_check ("Width: "))
+
+        # dimension value
+        dimension_value = rect_l
+        dimension_value = rect_w
 
         # return rectangle value
         print ("Your length is {}".format (rect_l))
@@ -215,6 +233,10 @@ while shape_choice != "xxx":
         tri_b = float (num_check ("Base: "))
         tri_h = float (num_check ("Height: "))
 
+        # get dimensions
+        dimension_value = tri_b
+        dimension_value = tri_h
+
         # return triangle value
         print ("Your base is {}".format (tri_b))
         print ("Your height is {}".format (tri_h))
@@ -226,6 +248,11 @@ while shape_choice != "xxx":
         tri_1 = float (num_check ("Side length 1: "))
         tri_2 = float (num_check ("Side length 2: "))
         tri_3 = float (num_check ("Side length 3: "))
+
+        # get dimensions
+        dimension_value = tri_1
+        dimension_value = tri_2
+        dimension_value = tri_3
 
         # return triangle value
         print ("Side length 1 is {}".format (tri_1))
@@ -240,6 +267,10 @@ while shape_choice != "xxx":
         para_b = float (num_check ("Base: "))
         para_h = float (num_check ("Height: "))
 
+        # get dimensions
+        dimension_value = para_b
+        dimension_value = para_h
+
         # return parallelogram value
         print ("Your base is {}".format (para_b))
         print ("Your height is {}".format (para_h))
@@ -250,6 +281,10 @@ while shape_choice != "xxx":
     if shape_choice == "parallelogram" and dimension_choice == "perimeter":
         para_1 = float (num_check ("Side 1: "))
         para_2 = float (num_check ("Side 2: "))
+
+        # dimension value
+        dimension_value = para_1
+        dimension_value = para_2
 
         # return parallelogram value
         print ("Side 1 is {}".format (para_1))
