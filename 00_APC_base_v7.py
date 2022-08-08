@@ -171,6 +171,24 @@ def parallelogram_peri ():
 
     return [shape_choice, para_1, para_2]
 
+def instructions (options):
+    show_help = "invalid choice"
+    show_error = "Please enter either yes or no"
+    while show_help == "invalid_choice":
+        show_help = input ("Would you like to read the instructions?: ").lower()
+        show_help = string_check (show_help, options, show_error)
+
+        if show_help == "yes":
+            print ()
+            print ("*** Area / Perimeter Calculator instructions ***")
+            print ()
+            print ("This program will calculate either the area or perimeter of a shape \n"
+                  "depending on your inputs")
+            print ()
+            print ("This program will ask you for...")
+            print ("- your desired unit to work with (Valid units are cm, m, and km)")
+            print ("- your desired shape (Valid shapes are circle, square, rectangle, triangle and parallelogram)")
+            print ("- dimensions of the shape")
 
 
 
@@ -186,7 +204,6 @@ valid_shapes = [
     ["rectangle", "r"],
     ["triangle", "t"],
     ["parallelogram", "p"],
-    ["xxx"]
     ]
 
 # get dimension type
@@ -202,9 +219,16 @@ valid_dimensions = [
 # valid options include <full name and first letter>
 
 valid_units = [
-    ["cm", "CM", "centimeter", "centi", "c"],
-    ["m", "M", "meter"],
-    ["km", "KM", "kilo", "kilometer"]
+    ["centimeter", "CM", "cm", "c"],
+    ["meter", "M", "m"],
+    ["kilometer", "KM", "kilo", "km", "k"],
+    ["xxx"]
+]
+
+# valid options for instructions
+yes_no = [
+    ["yes, y"],
+    ["no", "n"]
 ]
 
 
@@ -217,33 +241,43 @@ shape_list = []
 dimension_value = []
 area_list = []
 peri_list = []
+unit_list = []
 
 # data frame dictionary
 apc_data_dict = {
     'Shape': shape_list,
     'Dimensions': dimension_value,
     'Area': area_list,
-    'Perimeter': peri_list
+    'Perimeter': peri_list,
+    'Units': unit_list
 }
 
 
 
-shape_choice = ""
-while shape_choice != "xxx":
+unit_choice = ""
+while unit_choice != "xxx":
 
     # ask for unit
     unit_choice = string_check ("What unit: ", valid_units, "Please enter a valid unit")
+
+    # return unit choice
+    if unit_choice != "xxx":
+        print ("you have chosen {}".format (unit_choice))
+        print ()
+
+    if unit_choice == "xxx":
+        print ("EXIT")
+        break
+
+    # add unit to list
+    unit_list.append (unit_choice)
 
     # ask for shape type
     shape_choice = string_check ("What shape?: ", valid_shapes, "Please enter a valid shape")
 
     # return shape choice
-    if shape_choice != "xxx":
-        print ("You have chosen {}".format (shape_choice))
-
-    if shape_choice == "xxx":
-        print ("EXIT")
-        break
+    print ("You have chosen {}".format (shape_choice))
+    print()
 
     # add shape to list
     shape_list.append (shape_choice)
@@ -253,6 +287,8 @@ while shape_choice != "xxx":
 
     # return chosen dimension
     print ("You have chosen {}".format (dimension_choice))
+    print ()
+
         
 
 
@@ -377,7 +413,6 @@ while shape_choice != "xxx":
 
         # add dimensions to list
         dimension_value.append (para_value_p)
-
 
 
 
