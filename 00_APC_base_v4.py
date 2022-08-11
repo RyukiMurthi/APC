@@ -44,88 +44,6 @@ def num_check (question):
         except ValueError:
             print (error)
 
-def circle ():
-    # calculate circle dimension
-    # area
-    circ_area = float (pi*circle_value*circle_value)
-    if shape_choice == "circle" and dimension_choice == "area":
-        print()
-        print ("Area = {}".format (circ_area))
-        print()
-    
-    # perimeter
-    circ_peri = float ((2*pi)*circle_value)
-    if dimension_choice == "perimeter":
-        print()
-        print ("Perimeter = {}".format (circ_peri))
-        print()
-   
-def square ():
-    # calculate square dimension
-    # area
-    square_area = float (square_value*square_value)
-    if shape_choice == "square" and dimension_choice == "area":
-        print()
-        print ("Area = {}".format (square_area))
-        print()
-    
-    # perimeter
-    square_peri = float (4*square_value)
-    if shape_choice == "square" and dimension_choice == "perimeter":
-        print()
-        print ("Perimeter = {}".format (square_peri))
-
-def rectangle ():
-    # calculate rectangle dimension
-    # area
-    rectangle_area = float (rect_l*rect_w)
-    if shape_choice == "rectangle" and dimension_choice == "area":
-        print()
-        print ("Area = {}".format (rectangle_area))
-        print()
-    
-    # perimeter
-    rectangle_peri = float ((rect_l+rect_w)*2)
-    if shape_choice == "rectangle" and dimension_choice == "perimeter":
-        print()
-        print ("Perimeter = {}".format (rectangle_peri))
-        print()
-
-def triangle_area ():
-    # calculate triangle dimension
-    # area
-    triangle_area = float (0.5*tri_b*tri_h)
-    if shape_choice == "triangle" and dimension_choice == "area":
-        print()
-        print ("Area = {}".format (triangle_area))
-        print()
-
-def triangle_peri():
-    # calculate parallelogram dimension
-    # perimeter
-    triangle_peri = float (tri_1+tri_2+tri_3)
-    if shape_choice == "triangle" and dimension_choice == "perimeter":
-        print()
-        print ("Perimeter = {}".format (triangle_peri))
-        print()
-
-def parallelogram_area ():
-    # calculate parallelogram dimension
-    # area
-    para_area = float (para_b*para_h)
-    if shape_choice == "parallelogram" and dimension_choice == "area":
-        print()
-        print ("Area = {}".format (para_area))
-        print()
-
-def parallelogram_peri ():
-    # calculate parallelogram dimension 
-    # perimeter
-    para_peri = float ((para_1+para_2)*2)
-    if shape_choice == "parallelogram" and dimension_choice == "perimeter":
-        print()
-        print ("Perimeter = {}".format (para_peri))
-        print()
 
 
 
@@ -185,8 +103,7 @@ while shape_choice != "xxx":
         # return circle value
         print ("Your radius is {}".format (circle_value))
 
-        # calculate circle
-        circle()
+
 
     # *** get square ***
     if shape_choice == "square":
@@ -195,8 +112,7 @@ while shape_choice != "xxx":
         # return square value
         print ("Your length is {}".format (square_value))
 
-        # calculate square
-        square ()
+
 
     # *** get rectangle ***
     if shape_choice == "rectangle":
@@ -207,8 +123,7 @@ while shape_choice != "xxx":
         print ("Your length is {}".format (rect_l))
         print ("Your width is {}".format (rect_w))
 
-        # calculate rectangle
-        rectangle ()
+
 
     # *** get triangle ***
     if shape_choice == "triangle" and dimension_choice == "area":
@@ -219,8 +134,7 @@ while shape_choice != "xxx":
         print ("Your base is {}".format (tri_b))
         print ("Your height is {}".format (tri_h))
 
-        # calculate triangle
-        triangle_area ()
+
 
     if shape_choice == "triangle" and dimension_choice == "perimeter":
         tri_1 = float (num_check ("Side length 1: "))
@@ -232,8 +146,7 @@ while shape_choice != "xxx":
         print ("Side length 2 is {}".format (tri_2))
         print ("Side length 3 is {}".format (tri_3))
 
-        # calculate triangle
-        triangle_peri ()
+
     
     # *** get parallelogram ***
     if shape_choice == "parallelogram" and dimension_choice == "area":
@@ -244,8 +157,7 @@ while shape_choice != "xxx":
         print ("Your base is {}".format (para_b))
         print ("Your height is {}".format (para_h))
 
-        # calculate parallelogram
-        parallelogram_area ()
+ 
     
     if shape_choice == "parallelogram" and dimension_choice == "perimeter":
         para_1 = float (num_check ("Side 1: "))
@@ -255,5 +167,3 @@ while shape_choice != "xxx":
         print ("Side 1 is {}".format (para_1))
         print ("Side 2 is {}".format (para_2))
 
-        # calculate paralleogram
-        parallelogram_peri ()

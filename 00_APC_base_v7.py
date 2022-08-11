@@ -171,29 +171,43 @@ def parallelogram_peri ():
 
     return [shape_choice, para_1, para_2]
 
-def instructions (options):
-    show_help = "invalid choice"
+def instructions (yes_no):
     show_error = "Please enter either yes or no"
-    while show_help == "invalid_choice":
-        show_help = input ("Would you like to read the instructions?: ").lower()
-        show_help = string_check (show_help, options, show_error)
+    show_help = "Would you like to read the instructions?: "
+    show_help = string_check (show_help, yes_no, show_error)
 
-        if show_help == "yes":
-            print ()
-            print ("*** Area / Perimeter Calculator instructions ***")
-            print ()
-            print ("This program will calculate either the area or perimeter of a shape \n"
-                  "depending on your inputs")
-            print ()
-            print ("This program will ask you for...")
-            print ("- your desired unit to work with (Valid units are cm, m, and km)")
-            print ("- your desired shape (Valid shapes are circle, square, rectangle, triangle and parallelogram)")
-            print ("- dimensions of the shape")
+    if show_help == "yes":
+        print ()
+        print ()
+        print ("*** Area / Perimeter Calculator instructions ***")
+        print ()
+        print ("This program will calculate either the area or perimeter of a shape \n"
+                "depending on your inputs")
+        print ()
+        print ("This program will ask you for...")
+        print ("- your desired unit to work with (Valid units are cm, m, and km)")
+        print ("- your desired shape (Valid shapes are circle, square, rectangle, triangle and parallelogram)")
+        print ("- dimensions of the shape")
+        print ()
+        print ("Once you have finished calculating your shapes, \n"
+                "please enter the exit code 'xxx'. \n"
+                "This will allow you to see an overview of all \n"
+                "the dimensions and results that has been calculated")
+        print ()
+
+        return ""
 
 
 
 
 # *** MAIN ROUTINE ***
+
+# valid options for instructions
+yes_no = [
+    ["yes", "y"],
+    ["no", "n"]
+]
+
 
 # get shape name
 # valid shape hold list of all shape
@@ -225,11 +239,6 @@ valid_units = [
     ["xxx"]
 ]
 
-# valid options for instructions
-yes_no = [
-    ["yes, y"],
-    ["no", "n"]
-]
 
 
 #lists to store summary data
@@ -254,6 +263,10 @@ apc_data_dict = {
 
 
 
+# ask user if they want to read the intrsuctions
+instructions (yes_no)
+
+# loop to get shape information
 unit_choice = ""
 while unit_choice != "xxx":
 
